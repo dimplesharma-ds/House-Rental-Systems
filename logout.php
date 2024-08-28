@@ -1,22 +1,14 @@
 <?php
-session_start();
+// Start the session
+session_start(); //session is php variable that starts a new session
 
 // Unset all of the session variables
-$_SESSION = [];
-
-// Destroy the session cookie
-if (ini_get("session.use_cookies")) {
-    $params = session_get_cookie_params();
-    setcookie(session_name(), '', time() - 42000,
-        $params["path"], $params["domain"],
-        $params["secure"], $params["httponly"]
-    );
-}
+$_SESSION = array();  //superglobal array that stores sesion variables, array() replaces the existing contents with an empty array
 
 // Destroy the session
-session_destroy();
-
-// Redirect to the login page or any other appropriate page after logout
-header("Location: login.php");
+session_destroy(); //buil-in function that destroys all data of the session, completely terminates the current session
+ 
+// Redirect to the login page after logout
+header("Location:login.php");
 exit();
 ?>

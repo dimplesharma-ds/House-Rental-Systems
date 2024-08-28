@@ -1,12 +1,15 @@
-<?php
-$dsn = 'mysql:host=localhost;dbname=proj';
-$username = 'root';  // Replace with your database username
-$password = '';      // Replace with your database password
 
-try {
-    $pdo = new PDO($dsn, $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die('Database connection failed: ' . $e->getMessage());
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "proj";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname); // mysqli is a class in PHP representing connection to MYSQL db
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
