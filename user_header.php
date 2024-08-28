@@ -1,9 +1,11 @@
-<?php include 'header.php'?>
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Homepage</title>
     <style>
         /* Basic CSS for navigation */
@@ -13,7 +15,7 @@
             padding: 0;
         }
         nav {
-            background-color: #008000;
+            background-color: #008000;;
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -38,11 +40,20 @@
     </style>
 </head>
 <body>
-   
-    <div class="container">
-        <h1>Welcome to User Homepage</h1>
-        <p>This is a user homepage with navigation tabs for listings, about, contact us, home, signup, and login.</p>
-        <!-- Add more content here -->
-    </div>
+    <header>
+        <nav>
+            
+                
+                    <!-- Display different options after login -->
+                    <a href="dashboard.php">Home</a></li>
+                    <a href="listings.php">Listings</a>
+                    <a href="logout.php">Logout</a>
+                     
+                    
+                   
+               
+            
+        </nav>
+    </header>
 </body>
 </html>

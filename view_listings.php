@@ -1,4 +1,4 @@
-<?php include 'user_header.php'; ?>
+<?php include 'header.php'; ?>
 
 <?php
 include 'db.php';  // Adjust the path to 'db.php' as necessary
@@ -31,13 +31,7 @@ $listings = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <img src="<?php echo htmlspecialchars($listing['image_url']); ?>" alt="<?php echo htmlspecialchars($listing['title']); ?>" style="width:200px;">
                 <?php endif; ?>
 
-                <!-- Text area for user message -->
-                <form method="POST" action="send_message.php"> <!-- Adjust action as needed -->
-                    <textarea name="message" rows="4" cols="50" placeholder="Type your message here"></textarea><br>
-                    <input type="hidden" name="listing_id" value="<?php echo htmlspecialchars($listing['id']); ?>">
-                    <input type="submit" value="Send Message">
-                </form>
-            </li>
+                
         <?php endforeach; ?>
     </ul>
 </body>

@@ -1,4 +1,3 @@
-<?php include 'header.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +12,7 @@
             padding: 0;
         }
         nav {
-            background-color: #008000;
+            background-color: #333;
             color: #fff;
             text-align: center;
             padding: 10px;
@@ -38,7 +37,15 @@
     </style>
 </head>
 <body>
-   
+    <nav>
+        <a href="index.php">Home</a>
+        <a href="view_listings.php">Listings</a>
+        <a href="about.php">About</a>
+        <a href="contact.php">Contact Us</a>
+        <a href="register.php">Register</a>
+        <a href="login.php">Login</a>
+    </nav>
+
     <div class="container">
         <h1>Welcome to User Homepage</h1>
         <p>This is a user homepage with navigation tabs for listings, about, contact us, home, signup, and login.</p>

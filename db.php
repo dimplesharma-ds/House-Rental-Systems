@@ -1,18 +1,12 @@
-<?php 
-$servername = "localhost";  
-$username = "root"; 
-$password = ""; 
-$dbname = "Proj";
+<?php
+$dsn = 'mysql:host=localhost;dbname=proj';
+$username = 'root';  // Replace with your database username
+$password = '';      // Replace with your database password
 
-try { 
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);     
-// Set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
-
-
-
-} catch(PDOException $e) {    
- echo "Connection failed: " . $e->getMessage(); 
+try {
+    $pdo = new PDO($dsn, $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die('Database connection failed: ' . $e->getMessage());
 }
-?> 
-
+?>
